@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { promiseMiddleware } from './middleware';
 import { Provider } from 'react-redux';
 import App from './components/App';
 
@@ -10,10 +11,15 @@ const defaultState = {
 };
 
 const reducer = function(state = defaultState, action) {
+  switch (action.type) {
+    case 'HOME_PAGE_LOADED':
+      return { ...state, articles: action.payload.articles }
+      break;
+  }
   return state;
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(promiseMiddleware));
 
 ReactDOM.render((
   <Provider store={store}>
