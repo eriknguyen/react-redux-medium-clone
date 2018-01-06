@@ -11,3 +11,6 @@
   * Displaying retrieved data in components
     - Create `ArticlePreview` component for single article preview
     - Use `ArticlePreview` in `ArticleList` with the article data passed in
+
+### 3. Add `react-router`
+  * Refactor code: move all the redux store to new file `store.js`
