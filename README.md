@@ -19,3 +19,13 @@
     - Removed hard-coded `Home` component from `App` component
     - Component to be rendered is represented by `props.children` and `App.contextTypes` snippet tells react-router to attach the `children` property to this component's props
   * Create `Login` component to display on a Route
+  * Add navbar to header by using `Link` from react-router
+
+### 4. JWT Authentication with React&Redux
+  * Breakup reducer to smaller chunks 
+    - Put all reducers into `src/reducers/`
+    - `home.js` reducer
+    - `common.js` reducer for app name
+    - `auth.js` reducer contains auth-specific logic 
+    - Use `combineProducers()` to build in `store.js`
+    - Modify `mapStateToProps` function for all components that use combined reducers
