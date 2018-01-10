@@ -8,10 +8,12 @@ import agent from '../../agent';
 
 const Promise = global.Promise;
 
+// link component props to redux state
 const mapStateToProps = state => ({
   appName: state.common.appName
 });
 
+// for redux to dispatch an action
 const mapDispatchToProps = dispatch => ({
   onLoad: payload => dispatch({
     type: 'HOME_PAGE_LOADED',

@@ -5,7 +5,7 @@
 ### 1. Scaffolding app with React & Redux
 
 ### 2. Performing HTTP Requests with Custom Middleware
-  * Setup `superagent` for sending requests
+  * Setup `superagent` in `agent.js` for sending requests
   * Call the function to get articles in `Home` component
     - Integrate the agent with Home component
   * Displaying retrieved data in components
@@ -28,4 +28,11 @@
     - `common.js` reducer for app name
     - `auth.js` reducer contains auth-specific logic 
     - Use `combineProducers()` to build in `store.js`
-    - Modify `mapStateToProps` function for all components that use combined reducers
+    - Modify `mapStateToProps` function for all components that use combined reducers  
+
+  * Wiring up the Login Form
+    - Add `post` function to agent and use it to create `Auth.login` function in `agent.js`
+    - Hook `Login` component to Redux
+      - Pull in state from `auth` reducer in `mapStateToProps()`
+      - Add `mapDispatchToProps` function for `Login` component to dispatch different events: update field, submit
+    - Create new `ListErrors` component to show error messages, used by login form
