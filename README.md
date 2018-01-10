@@ -14,3 +14,8 @@
 
 ### 3. Add `react-router`
   * Refactor code: move all the redux store to new file `store.js`
+  * Set up routing structure:
+    - Build initial router setup with `Router`, `hashHistory`, `Route` and `IndexRoute`
+    - Removed hard-coded `Home` component from `App` component
+    - Component to be rendered is represented by `props.children` and `App.contextTypes` snippet tells react-router to attach the `children` property to this component's props
+  * Create `Login` component to display on a Route
