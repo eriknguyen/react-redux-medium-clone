@@ -31,7 +31,7 @@
     - Modify `mapStateToProps` function for all components that use combined reducers  
 
   * Wiring up the Login Form
-    - Add `post` function to agent and use it to create `Auth.login` function in `agent.js`
+    - Add `post` function to API request agent and use it to create `Auth.login` function in `agent.js`
     - Hook `Login` component to Redux
       - Pull in state from `auth` reducer in `mapStateToProps()`
       - Add `mapDispatchToProps` function for `Login` component to dispatch different events: update field, submit
