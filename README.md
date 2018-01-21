@@ -36,3 +36,21 @@
       - Pull in state from `auth` reducer in `mapStateToProps()`
       - Add `mapDispatchToProps` function for `Login` component to dispatch different events: update field, submit
     - Create new `ListErrors` component to show error messages, used by login form
+
+  * Wiring the Authentication Reducer
+    - Handle actions: `LOGIN`, `UPDATE_FIELD_AUTH`, `ASYNC_START`
+    - Update the `auth` reducer to handle the above actions
+    - Update the `promiseMiddleware` to dispatch an `ASYNC_START` action when an async action start -> to disable the submit button while submission
+  
+  * Local Storage Middleware & Redirects
+    - Update `common` reducer to get the token after user login and redirect user
+    - `common` reducer takes some new actions:
+      - `APP_LOAD`: setup app state with token & currentUser (if any)
+      - `REDIRECT`: 
+      - `LOGIN`: update state when user logged in
+    - Dispatch `REDIRECT` in `App.js`
+      - Using `componentWillReceiveProps` lifecycle method
+    - Setup `localStorageMiddleware` to store the user token
+      - JWT token is stored at `window.localStorage`
+    - Update `App` component to pull the token from `window.localStorage`
+    - Update `agent.js` to use the user token on every requests
