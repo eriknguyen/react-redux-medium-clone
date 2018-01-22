@@ -50,7 +50,7 @@
       - `LOGIN`: update state when user logged in
     - Dispatch `REDIRECT` in `App.js`
       - Using `componentWillReceiveProps` lifecycle method
-    - Setup `localStorageMiddleware` to store the user token
+    - Setup `localStorageMiddleware` to store the user token (So it won't be lost if the user closes the browser window)
       - JWT token is stored at `window.localStorage`
     - Update `App` component to pull the token from `window.localStorage`
     - Update `agent.js` to use the user token on every requests

@@ -5,7 +5,7 @@ export default (state = {}, action) => {
         ...state,
         articles: action.payload.articles
       };
+    default:
+      return state;
   }
-
-  return state;
 }

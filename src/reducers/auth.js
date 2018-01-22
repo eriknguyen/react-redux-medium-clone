@@ -13,6 +13,8 @@ export default (state = {}, action) => {
       break;
     case 'UPDATE_FIELD_AUTH':
       return { ...state, [action.key]: action.value };
+    default:
+      break;
   }
 
   return state;
